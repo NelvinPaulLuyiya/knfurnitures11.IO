@@ -1,0 +1,326 @@
+<!---------- Meta HTML Starts --------->
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>WELCOME TO KN FURNITURES LTD </title>
+	  <style type="text/css">
+	  
+	  * {
+    box-sizing: border-box;
+    font-family: Tahoma, Arial;
+    padding: 0px;
+    margin: 0px;
+}
+
+.slider-container {
+    width: 840px;
+    margin: auto;
+    position: relative;
+}
+
+.slider-container .fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+.slider-container .slides .slider-numbers {
+    position: absolute;
+    padding: 15px;
+    font-size: 15px;
+    color: #FFF
+}
+
+.slider-container .slides .slider-caption {
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    color: #FFF;
+    padding: 10px;
+}
+
+.slider-container .prev,
+.slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.slider-container .next {
+    right: 0px;
+}
+
+.slider-container .prev:hover{
+    background: rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+}
+.slider-container .next:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets {
+    text-align: center;
+}
+
+.slider-container .slider-bullets .dots {
+    display: inline-block;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #808080;
+    border-radius: 50%;
+}
+
+.slider-container .slider-bullets .dots:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets .active {
+    background-color: #383838;
+}
+	  thead{
+	  background-color:#cd853f;
+	  }
+	  nav{
+	  background-color:rgb(205,127,50)
+	  }
+	  title{
+	  font-weight:bold;
+	  text-decoration:underline;
+	  }
+	  html,body{
+	  margin:0;
+	  padding:0;
+	  }
+	  .body{
+	  display:flex;
+	  min-height:100vh;
+	  flex-direction:column;
+	  }
+	  main{
+	  flex:1 0 auto;
+	  }
+	  .nav-bar{
+	  background:white;
+	  width:100%;
+	  height:20%;
+	  position:fixed;
+	  top:0px;
+	  left:0px;
+	  
+	  }
+	  .nav-bar a{
+	  text-decoration:none;
+	  color:black;
+	  display:block;
+	  height:50px;
+	  line-height:50px;
+	  }
+	  .nav-bar >ul {
+	  list-style-type:none;
+	  margin:0;
+	  padding:0;
+	  }
+	  .nav-bar >ul>li>a{
+	  background:light-grey;
+	  }
+	  .nav-bar .active{
+	  background:#173459;
+	  color:#f8f9f9;
+	  }
+	  .nav-bar li{
+	  float:left;
+	  width:25%;
+	  text-align:center;
+	  border-right:1px solid #333;
+	  }
+	  .nav-bar li:last-child{
+	  border:none;
+	  }
+	  .navigation-button{
+	  text-align:center;
+	  position:relative;
+	  }
+	  
+      <link rel="stylesheet" href="VIC.CSS">
+	  </style>
+   </head>
+   <body>
+   <script>
+   alert("WELCOME TO KN FURNITURES")
+   var imgs=document.querySelectorAll('.slider img');
+   var dots=document.querySelectorAll('.dot');
+   var currentImg=0;
+   const interval=3000;
+   function changeSlide(n){
+   for(var i=0;i<imgs.length;i++){
+   imgs[i].style.opacity=0;
+   dots[i].className=dots[i].className.replace('active',' ');
+   }
+   currentImg=n;
+   imgs[currentImg].style.opacity=1;
+   dots[currentImg].className+='active';
+   }
+   var timer=setInterval(changeSlide,interval);
+   currentImg=(currentImg+1)%imgs.length;
+   if(n!=undefined){
+   clearInterval(timer);
+   timer=setInterval(changeSlide,interval);
+   currentImg=n;
+   }
+   var slideIndex = 1;
+
+function showImage(n) { // for Display the first Image
+    
+    'use strict';
+    
+    var slide = document.getElementsByClassName('slides'),
+        
+        dots = document.getElementsByClassName('dots'),
+        
+        i;
+    
+    if (n > slide.length) { // to prevent larger values than the slide length
+        
+        slideIndex = 1;
+    }
+    
+    if (n < 1) { // to avoide negative values
+        
+        slideIndex = slide.length;
+    }
+    
+    for (i = 0; i < slide.length; i++) { // to make other images dispaly: none
+        
+        slide[i].style.display = 'none';
+    }
+    slide[slideIndex - 1].style.display = 'block';
+    
+    for (i = 0; i < dots.length; i++) { // to remove the active class from other dots
+        
+        dots[i].className = dots[i].className.replace(' active', '');
+    }
+    
+    dots[slideIndex - 1].className += ' active';
+}
+
+showImage(slideIndex);
+
+function plusIndex(n) { // for Next & Prev Actions
+    
+    'use strict';
+    
+    showImage(slideIndex += n);
+}
+
+function currentSlide(n) { // for Slide Bullets Selection
+    
+    'use strict';
+    
+    showImage(slideIndex = n);
+}
+   </script>
+   <thead>
+   <h2>
+<!---------- Meta HTML Ends --------->
+<!---------- Logo HTML Starts --------
+<img src="LOGO.jpg"/><img src="LOGO.jpg"/><img src="LOGO.jpg"/>
+<!---------- Logo HTML Ends --------->
+<!---------- Main Menu HTML Starts --------->
+<nav>
+   <div class="nav-bar">
+<ul>
+<li>   
+      <a href="home.html" class="active">HOME</a></li> 
+<li>
+	  <a href="queries.html">QUERIES</a></li>
+<li> <a href="gallery.html">OUR PRODUCTS</a></li>
+<li> <a href="map.html">CONTACT</a></li>
+<li>  <a href="onoffer.html">OFFERS</a></li>
+   </div>
+</nav>
+<!---------- Main Menu HTML Ends --------->
+<!---------- Slider HTML Starts --------->
+</thead>
+</div>
+<div class="slider">
+<img id="img-1" width="5000" height="50" src="LOGO.jpg" alt="image1"/><img id="img-1" style="border-radius:50%" src="BEDTWO.jpg" alt="image1"/>
+<div class="slider-container">
+
+    <div class="slides fade">
+        <div class="slider-numbers">1/5</div>
+        <div class="slider-image"><img width="500" height="500" src="BEDTEN.jpg" alt="background_1"></div>
+        <div class="slider-caption">Caption 1</div>
+    </div> <!-- slider -->
+
+    <div class="slides fade">
+        <div class="slider-numbers">2/5</div>
+        <div class="slider-image"><img src="BEDONE.jpg" width="800" height="800" alt="background_2"></div>
+        <div class="slider-caption">Caption 2</div>
+    </div> <!-- slider -->
+
+    <div class="slides fade">
+        <div class="slider-numbers">3/5</div>
+        <div class="slider-image"><img src="BEDTHREE.jpg"width="800" height="800" alt="background_3"></div>
+        <div class="slider-caption">Caption 3</div>
+    </div> <!-- slider -->
+
+    <div class="slides fade">
+        <div class="slider-numbers">4/5</div>
+        <div class="slider-image"><img src="BEDSIX.jpg"width="800" height="800" alt="background_4"></div>
+        <div class="slider-caption">Caption 4</div>
+    </div> <!-- slider -->
+  <div class="slides fade">
+        <div class="slider-numbers">5/5</div>
+        <div class="slider-image"><img src="BEDNINE.jpg"width="800" height="800" alt="background_4"></div>
+        <div class="slider-caption">Caption 5</div>
+    </div> <!-- slider -->
+    <!-- Slider Next and Previous buttons -->
+    <a class="prev" onclick="plusIndex(-1)">❮</a>
+    <a class="next" onclick="plusIndex(+1)">❯</a>
+
+    <!-- Slider Selection Bullets -->
+    <div class="slider-bullets" id="slider-bullets">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        <span class="dots" onclick="currentSlide(4)"></span>
+		<span class="dots" onclick="currentSlide(5)"></span>
+		<span class="dots" onclick="currentSlide(6)"></span>
+    </div> <!-- Slider Bullets -->
+
+</div>
+</div>
+
+
+
+
+
+
+<footer style="background:lightgreen; height:200px; padding:15px">CONTACT US TODAY</br>
+CONTACTS:0756645664/097645663
+EMAIL<a href="kabuuantony@gmail.com">GET IN TOUCH WITH US</a>
+</footer>
+
+<!---------- Slider HTML Ends --------->
+<!---------- News, Event, Notice Board HTML Starts --------->
+</tbody>
+</body>
+</html>
